@@ -36,6 +36,7 @@
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "express": "^4.16.3",
+    "express-validator": "^5.3.1",
     "faker": "^4.1.0",
     "helmet": "^3.13.0",
     "http-errors": "~1.6.2",
@@ -52,6 +53,7 @@
     "passport-local": "^1.0.0",
     "prettier": "^1.14.2",
     "prettier-eslint": "^8.8.2",
+    "pretty-response": "^1.0.1",
     "winston": "^3.0.0"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const passport = require('passport');
 
-let auth = (req, res, next) => {
+const auth = (req, res, next) => {
   passport.authenticate(
     'jwt',
     {

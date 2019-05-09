@@ -1,5 +1,5 @@
 const express = require('express');
-const usersControllers = require('../../controllers/users');
+const { users } = require('../../controllers/v1');
 
 const route = express.Router();
 
@@ -9,13 +9,13 @@ const route = express.Router();
 
 // const { auth } = require('../../helpers/v1/auth');
 
-route.post('/login', usersControllers.login); // login end point
-route.post('/register', usersControllers.register); // register end point
+route.post('/login', users.login); // login end point
+route.post('/register', users.register); // register end point
 
 /**
  * Using auth example
  */
 
-// route.get('/', auth, usersControllers.getAll);
+// route.get('/', auth, users.getAll);
 
 module.exports = route;

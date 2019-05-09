@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const passport = require('passport');
 const uuid = require('node-uuid');
+const pretty = require('pretty-response');
 const winston = require('../config/winston');
 const indexRouter = require('./routes/index');
 
@@ -27,6 +28,7 @@ app.use(cookieParser());
 app.use(cors());
 app.use(helmet());
 app.use(compress());
+app.use(pretty);
 app.use(
   morgan(
     ':id :remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"',
