@@ -1,6 +1,6 @@
 module.exports = {
   trailingComma: 'es5',
-  arrowParens: 'avoid',
+  arrowParens: 'always',
   bracketSpacing: true,
   insertPragma: false,
   printWidth: 80,

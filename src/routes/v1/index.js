@@ -1,9 +1,9 @@
 const express = require('express');
-const users = require('./users');
+const sample = require('./sample');
 
 // Declare API Route and API Version
 const v1 = express.Router();
 
-v1.use('/users', users);
+v1.use('/sample', sample);
 
 module.exports = v1;

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "Helpers/*": ["src/helpers/*"],
+      "Services/*": ["src/services/*"],
+      "Middlewares/*": ["src/middlewares/*"],
+      "Models/*": ["src/models/*"],
+      "Routes/*": ["src/routes/*"],
+      "Controllers/*": ["src/controllers/*"],
+      "App/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
