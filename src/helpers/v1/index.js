@@ -1,4 +1,4 @@
-const auth = require('./auth');
+const wrap = require('./wrap');
 const response = require('./response');
 
-module.exports = { auth, response };
+module.exports = { wrap, response };
