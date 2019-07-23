@@ -1,4 +1,5 @@
 require('module-alias/register');
+require('dotenv').config();
 const compress = require('compression');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -8,6 +9,9 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const uuid = require('node-uuid');
 const pretty = require('pretty-response');
+const bodyParser = require('body-parser');
+const expressValidator = require('express-validator');
+
 const winston = require('../config/winston');
 const indexRouter = require('./routes/v1/index');
 
@@ -21,10 +25,13 @@ const assignId = (req, res, next) => {
 morgan.token('id', (req) => req.id);
 
 app.use(assignId);
+app.use(expressValidator());
 app.use(cookieParser());
 app.use(cors());
 app.use(helmet());
 app.use(compress());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(pretty);
 app.use(
   morgan(
