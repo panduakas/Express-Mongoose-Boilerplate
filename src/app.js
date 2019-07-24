@@ -11,9 +11,10 @@ const uuid = require('node-uuid');
 const pretty = require('pretty-response');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
+const enrouten = require('express-enrouten');
+const path = require('path');
 
 const winston = require('../config/winston');
-const indexRouter = require('./routes/v1/index');
 
 const app = express();
 
@@ -39,10 +40,13 @@ app.use(
     { stream: winston.stream }
   )
 );
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 
-app.use('/', indexRouter);
+app.use(
+  '/',
+  enrouten({
+    directory: path.join(__dirname, 'routes'),
+  })
+);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

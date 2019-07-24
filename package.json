@@ -17,7 +17,7 @@
   "scripts": {
     "eslint": "node_modules/.bin/eslint --fix src/. --config .eslintrc.json",
     "start": "./node_modules/.bin/link-module-alias && node_modules/.bin/nodemon --exec node src/",
-    "test": "node_modules/.bin/nodemon --exec node src/"
+    "test": "node_modules/.bin/dredd --exec node src/"
   },
   "repository": {
     "type": "git",
@@ -33,10 +33,12 @@
     "cors": "^2.8.4",
     "debug": "~2.6.9",
     "dotenv": "^6.0.0",
+    "dredd": "^11.2.15",
     "eslint": "^5.4.0",
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-prettier": "^2.6.2",
     "express": "^4.16.3",
+    "express-enrouten": "^1.3.0",
     "express-validator": "^6.1.1",
     "helmet": "^3.13.0",
     "http-errors": "~1.6.2",

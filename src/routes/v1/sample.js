@@ -1,16 +1,6 @@
-const express = require('express');
-const route = express.Router();
+const { wrap } = require('Helpers/v1');
+const { sample } = require('Controllers/v1');
 
-/**
- * Import auth
- */
-
-// const { auth } = require('../../helpers/v1/auth');
-
-/**
- * Using auth example
- */
-
-// route.get('/', auth, users.getAll);
-
-module.exports = route;
+module.exports = (router) => {
+  router.post('/', wrap(sample));
+};
